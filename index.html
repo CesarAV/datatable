@@ -1,0 +1,988 @@
+<!DOCTYPE html>
+<html lang="en-us" id="top">
+    <head>
+        <meta charset="UTF-8">
+        <title>Datatable by Holt59</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="css/bootstrap.min.css" media="screen">
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+        <link rel="stylesheet" type="text/css" href="css/font-awesome.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/prism.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/datatable-bootstrap.min.css" media="screen">
+        <link rel="stylesheet" type="text/css" href="css/index.css" media="screen">
+    </head>
+    <body data-spy="scroll" data-target=".right-nav" data-offset="22">
+
+        <div class="jumbotron">
+            <a href="https://github.com/Holt59/datatable" id="forkme"><i class="fa fa-github"></i> Fork me on Github</a>
+            <div class="container">
+            <h1>Datatable - A javascript plugin...</h1>
+            <p class="headline">...for smarter HTML table, by <a href="https://github.com/Holt59" target="_blank">@Holt59</a>.</p>
+            <p>
+                <a class="btn btn-lg" href="https://github.com/Holt59/datatable" target="_blank"><i class="fa fa-github"></i> Code on Github</a>
+                <a class="btn btn-lg" href="https://github.com/Holt59/datatable/archive/master.zip"><i class="fa fa-download"></i> Download (.zip)</a>
+            </p>
+            </div>
+        </div>
+
+        <div class="container">
+
+            <div class="row">
+                <div id="content" class="col-md-9">
+                    <section id="getting-started">
+                        <h1>Getting Started</h1>
+                        <h3>Dependencies</h3>
+                        <p>Since version <i>2</i>, this plugin is standalone, thus there are no dependencies.</p>
+                        <p><span class="label label-info">Info!</span> This page uses <a href="http://getbootstrap.com/">Bootstrap</a>, so you may not have the exact
+                        same rendering for your table.</p>
+                        <h3>Installation</h3>
+                        <p>Download the <a href="https://github.com/Holt59/datatable/archive/master.zip">archive</a> containing the plugin, or clone
+                         it using:</p>
+                        <pre><code class="language-javascript">git clone https://github.com/Holt59/datatable.git</code></pre>
+                        <h3>Using the plugin</h3>
+                        <p>You need to include the following files in order to use the plugin: </p>
+                        <pre><code class="language-markup">&lt;!-- CSS files (include only one of the two files!) --&gt;
+&lt;!-- If you are not using bootstrap: --&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/datatable.min.css" media="screen"&gt;
+&lt;!-- If you are using bootstrap: --&gt;
+&lt;link rel="stylesheet" type="text/css" href="css/datatable-bootstrap.min.css" media="screen"&gt;
+                        
+&lt;!-- JS files --&gt;
+&lt;script type="text/javascript" src="js/datatable.min.js"&gt;&lt;/script&gt;
+                        
+&lt;!-- Add the following if you want to use the jQuery wrapper (you still need datatable.min.js): --&gt;
+&lt;script type="text/javascript" src="js/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script type="text/javascript" src="js/datatable.jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+
+                        <h3>Your first datatable</h3>
+                        <p>Below is a basic example on what you could get using this plugin (there are tons of extra options documented below):</p>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#first-datatable-output" aria-controls="first-datatable-output" role="tab" data-toggle="tab">With datatable</a></li>
+                                <li role="presentation"><a href="#first-datatable-without" aria-controls="first-datatable-without" role="tab" data-toggle="tab">Without the plugin</a></li>
+                                <li role="presentation"><a href="#first-datatable-markup" aria-controls="first-datatable-markup" role="tab" data-toggle="tab">Markup</a></li>
+                                <li role="presentation"><a href="#first-datatable-javascript" aria-controls="first-datatable-javascript" role="tab" data-toggle="tab">Javascript</a></li>
+                                <li role="presentation"><a href="#first-datatable-jquery" aria-controls="first-datatable-jquery" role="tab" data-toggle="tab">jQuery</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="first-datatable-output">
+
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="first-datatable-without">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>Linus</td>
+            <td>Torvalds</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Brian</td>
+            <td>Kernighan</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Blaise</td>
+            <td>Pascal</td>
+            <td>Mathematics</td>
+        </tr>
+        <tr>
+            <td>Larry</td>
+            <td>Page</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Richard</td>
+            <td>Hamming</td>
+            <td>Mathematics</td>
+        </tr>
+        <tr>
+            <td>Grace</td>
+            <td>Hopper</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Pierre</td>
+            <td>Bezier</td>
+            <td>Mathematics</td>
+        </tr>
+        <tr>
+            <td>Shigeru</td>
+            <td>Miyamoto</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Leslie</td>
+            <td>Lamport</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Rasmus</td>
+            <td>Lerdorf</td>
+            <td>Computer Science</td>
+        </tr>
+        <tr>
+            <td>Xavier</td>
+            <td>Leroy</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Albert</td>
+            <td>Einstein</td>
+            <td>Physics</td>
+		</tr>
+        <tr>
+            <td>Bill</td>
+            <td>Gates</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Leonard</td>
+            <td>De Vinci</td>
+            <td>Mathematics</td>
+		</tr>
+        <tr>
+            <td>Pierre</td>
+            <td>De Fermat</td>
+            <td>Mathematics</td>
+		</tr>
+        <tr>
+            <td>René</td>
+            <td>Descartes</td>
+            <td>Mathematics</td>
+		</tr>
+        <tr>
+            <td>Alan</td>
+            <td>Turing</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Ada</td>
+            <td>Lovelace</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Isaac</td>
+            <td>Newton</td>
+            <td>Physics</td>
+		</tr>
+        <tr>
+            <td>Carl Friedrich</td>
+            <td>Gauss</td>
+            <td>Mathematics</td>
+		</tr>
+        <tr>
+            <td>John</td>
+            <td>Von Neumann</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Claude</td>
+            <td>Shannon</td>
+            <td>Mathematics</td>
+		</tr>
+        <tr>
+            <td>Tim</td>
+            <td>Berners-Lee</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Richard</td>
+            <td>Stallman</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Dennis</td>
+            <td>Ritchie</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Bjarne</td>
+            <td>Stroustrup</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Steve</td>
+            <td>Jobs</td>
+            <td>Computer Science</td>
+		</tr>
+        <tr>
+            <td>Steve</td>
+            <td>Wozniak</td>
+            <td>Computer Science</td>
+		</tr>        <tr>
+            <td>Mario</td>
+            <td>Molina</td>
+            <td>Chemistry</td>
+        </tr>
+    </tbody>
+</table>
+<div id="paging-first-datatable"></div>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="first-datatable-markup">
+                                    <pre><code class="language-markup"></code></pre>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="first-datatable-javascript">
+                                    <pre><code class="language-javascript">var datatable = new DataTable(document.querySelector('#first-datatable-output table'), {
+    pageSize: 5,
+    sort: [true, true, false],
+    filters: [true, false, 'select'],
+    filterText: 'Type to filter... ',
+    pagingDivSelector: "#paging-first-datatable"
+});</code></pre>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="first-datatable-jquery">
+                                    <pre><code class="language-javascript">$('#first-datatable-output table').datatable({
+    pageSize: 5,
+    sort: [true, true, false],
+    filters: [true, false, 'select'],
+    filterText: 'Type to filter... ',
+    pagingDivSelector: "#paging-first-datatable"
+});</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                        <p><span class="label label-success">Ugh?</span> If you feel upset because your favorite scientist do not show up in the above table, 
+                        feel free to add it by creating <a href="https://github.com/Holt59/datatable/pulls">a pull request</a>!</p>
+                    </section>
+
+                    <section id="options">
+                        <h1>Available Options</h1>
+                        <h2 id="option-data">data</h2>
+                        <p>The <code class="language-option">data</code> option specifies which data should be rendered in the datatable based on its type.</p>
+                        <h3>From the HTML table</h3>
+                        <p>If the option <code>data</code> is not defined or set to <code class="language-javascript">false</code>, the data will be retrieved from the current content
+                        of the HTML table (see <i>your first datatable</i> example above).</p>
+                        <h3>From an array of array</h3>
+                        <p>If <code class="language-option">data</code> is an array (<code class="language-javascript">data instanceof Array</code>), it will be used to fill the table,
+                        considering each cell of the array as an entry for the datatable: </p>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">           
+                                <li role="presentation" class="active"><a href="#opts-data-array-1-javascript" aria-controls="opts-data-array-1-javascript" role="tab" data-toggle="tab">Javascript</a></li>
+                                <li role="presentation"><a href="#opts-data-array-1-markup" aria-controls="opts-data-array-1-markup" role="tab" data-toggle="tab">Markup</a></li>
+                                <li role="presentation"><a href="#opts-data-array-1-output" aria-controls="opts-data-array-1-output" role="tab" data-toggle="tab">Output</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="opts-data-array-1-javascript">
+                                    <pre><code class="language-javascript">var datatable = new DataTable(document.querySelector('#my-table'), {
+    data: [
+        ['Albert', 'Einstein'],
+        ['Linus', 'Torvalds'],
+        ['Ada', 'Lovelace']
+    ]
+});</code></pre>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="opts-data-array-1-markup">
+                                    <pre><code class="language-markup"></code></pre>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="opts-data-array-1-output">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+                                </div>
+                            </div>
+                        </div>
+                        <p><span class="label label-warning">Warning!</span> Do not forget to add the <code class="language-markup">&lt;tbody&gt;&lt;/tbody&gt;</code> tag inside your table before running datatable.</p>
+                        <h3>From an array of object</h3>
+                        <p>You may want to use <code class="language-javascript">Object</code> as cell instead of <cod class="language-javascript"e>Array</code>, 
+                        it may be useful to specify <code class="language-option">sort</code>, <code class="language-option">identify</code> or <code class="language-option">filters</code> options:</p>
+                        <div role="tabpanel">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">           
+                                <li role="presentation" class="active"><a href="#opts-data-array-2-javascript" aria-controls="opts-data-array-2-javascript" role="tab" data-toggle="tab">Javascript</a></li>
+                                <li role="presentation"><a href="#opts-data-array-2-markup" aria-controls="opts-data-array-2-markup" role="tab" data-toggle="tab">Markup</a></li>
+                                <li role="presentation"><a href="#opts-data-array-2-output" aria-controls="opts-data-array-2-output" role="tab" data-toggle="tab">Output</a></li>
+                            </ul>
+
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                <div role="tabpanel" class="tab-pane active" id="opts-data-array-2-javascript">
+                                    <pre><code class="language-javascript">var datatable = new DataTable(document.querySelector('#my-table'), {
+    data: [
+        {firstname: 'Albert', lastname: 'Einstein'},
+        {firstname: 'Linus',  lastname: 'Torvalds'},
+        {firstname: 'Ada',    lastname: 'Lovelace'}
+    ]
+});</code></pre>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="opts-data-array-2-markup">
+                                    <pre><code class="language-markup"></code></pre>
+                                </div>
+                                <div role="tabpanel" class="tab-pane" id="opts-data-array-2-output">
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+                                </div>
+                            </div>
+                        </div>
+                        <h3>AJAX Data</h3>
+                        <p>It is possible to load data using AJAX with datatable, to do so, you need to pass a javascript object as the <code class="language-option">data</code> option (see below
+                        for more explanation):</p>
+                        <pre><code class="language-javascript">{
+    data: {
+        url: "http://site.com/get", // The service URL
+        type: "post" | "get",       // The type of request (post or get)
+        size: null | int,           // The total amount of data to load, 
+                                    // may also be specified as the data-size attribute
+        allInOne: false,            // Set to true to load all your data in one AJAX call
+        refresh: false | int        // Set to a positive value to refresh the data 
+                                    // every X milliseconds
+    }
+}</code></pre>
+                        <h4>Server side</h4>
+                        <p>The server must returns data in JSON format: <b>One</b> JSON array containing either JSON array or object as cells:</p>
+                        <pre><code class="language-javascript">[["Albert", "Einstein"], ["Isaac", "Newton"]]
+// Or...
+[{"firstname": "Albert", "lastname": "Einstein"}, {"firstname": "Isaac", "lastname": "Newton"}]</code></pre>
+                        <p>Below is a simple PHP example: </p>
+                        <pre><code class="language-php">// Please do not use the following in production, this is not safe code!
+$start = $_GET['start'];
+$limit = $_GET['limit'];
+
+$entries = array();
+foreach ($db->query("SELECT * FROM my_table LIMIT $start, $limit") as $row) {
+    $entries[] = $row;
+}
+
+echo json_encode($entries);
+</code></pre>
+                        <p><span class="label label-warning">Warning!</span> The plugin may ask for more data than what is currently available (e.g. for the last
+                        block), so your server code must be able to handle such request (by returning smaller or empty arrays).</p>
+                        <h4>AJAX options</h4>
+                        <p>By default (<code class="language-javascript">allInOne = false</code>), the plugin will load data block by block using the following type of URL:</p>
+                        <pre><code class="language-php">http://site.com/get?offset=0&limit=50</code></pre>
+                        <p>Where <code class="language-">http://site.com/get</code> is the URL specified in the <code class="language-option">data</code> option and <code class="language-option">offset</code> and <code class="language-option">limit</code>
+                        define the range of data that should be returned.</p>
+                        <p>Below are the available possible values for the options <code class="language-option">size</code> and <code class="language-option">allInOne</code>: </p>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th><code class="language-option">size</code></th>
+                                    <th><code class="language-option">allInOne</code></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code class="language-javascript">int</code></td>
+                                    <td><code class="language-javascript">false</code></td>
+                                    <td><span class="label label-info">Prefered!</span> Data will be retrieved asynchronously (multiple simultaneous AJAX calls).</td>
+                                </tr>
+                                <tr>
+                                    <td><code class="language-javascript">int</code></td>
+                                    <td><code class="language-javascript">true</code></td>
+                                    <td>Data will be retrieved in <b>one</b> AJAX call (do not use if you want to load a large amount of entries).</td>
+                                </tr>
+                                <tr>
+                                    <td><code class="language-javascript">null</code></td>
+                                    <td><code class="language-javascript">false | true</code></td>
+                                    <td>Data will be retrieved (asynchronously) by doing one AJAX call at a time (slower than the first one).</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p><span class="label label-info">Info!</span> If <code class="language-javascript">refresh != false</code>, the whole table will be refreshed every X milliseconds using
+                        the third way specified above (as if <code class="language-option">size</code> was <code class="language-javascript">null</code> and <code class="language-option">allInOne</code> 
+                        was <code class="language-javascript">false</code>). You may initialy load data the way you want even if the refresh mode is fixed.</p>
+
+                        <h2 class="option-others">Other Options</h2>
+                        
+                        <p>Below is a summary of all the available options.</p>
+
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th>Option</th>
+                                    <th>Default value</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code class="language-option">data</code></td>
+                                    <td colspan="2"></td>
+                                </tr>
+                                <tr>
+                                    <td><code class="language-option">tableClass</code></td>
+                                    <td><code class="language-javascript">"datatable"</code></td>
+                                    <td>The class to be added to the HTML table element.</td>
+                                </tr>
+                                <tr>
+                                    <td>pagingDivSelector</td>
+                                    <td><code class="language-javascript">".paging"</code></td>
+                                    <td>The jQuery selector for paging divs.</td>
+                                </tr>
+                                <tr>
+                                    <td>pagingDivClass</td>
+                                    <td><code class="language-javascript">"pagination pagination-centered"</code></td>
+                                    <td>The HTML class which will be added to the paging div.</td>
+                                </tr>
+                                <tr>
+                                    <td>pagingListClass</td>
+                                    <td><code class="language-javascript">""</code></td>
+                                    <td>The HTML class which will be added to the &lt;ul&gt; tag inside the paging div.</td>
+                                </tr>
+                                <tr>
+                                    <td>counterDivSelector</td>
+                                    <td><code>'.counter'</code></td>
+                                    <td>The jQuery selector for counter divs.</td>
+                                </tr>
+                                <tr>
+                                    <td>counterText</td>
+                                    <td colspan="2">See below.</td>
+                                </tr>
+                                <tr>
+                                    <td>loadingDivSelector</td>
+                                    <td><code>'.loading'</code></td>
+                                    <td>The jQuery selector for the ajax loading div.</td>
+                                </tr>
+                                <tr>
+                                    <td>sort</td>
+                                    <td><code>false</code></td>
+                                    <td>See the sort part below for more information.</td>
+                                </tr>
+                                <tr>
+                                    <td>sortKey</td>
+                                    <td><code>undefined</code></td>
+                                    <td>The default sort key (if sort enable).</td>
+                                </tr>
+                                <tr>
+                                    <td>sortDir</td>
+                                    <td><code>'asc'</code></td>
+                                    <td>The default sort direction (<code>'asc'</code> or <code>'desc'</code>).</td>
+                                </tr>
+                                <tr>
+                                    <td>nbColumns</td>
+                                    <td><code>-1</code></td>
+                                    <td>The number of columns. If not specified will be find according to the number of
+                                    &lt;th&gt; tags in the head of the table.</td>
+                                </tr>
+                                <tr>
+                                    <td>pageSize</td>
+                                    <td><code>20</code></td>
+                                    <td>The number of elements that will be shown on each page.</td>
+                                </tr>
+                                <tr>
+                                    <td>identify</td>
+                                    <td><code>false</code></td>
+                                    <td>The key to use for check if 2 element are equals. Can also be a function.</td>
+                                </tr>
+                                <tr>
+                                    <td>pagingNumberOfPages</td>
+                                    <td><code>9</code></td>
+                                    <td>The number of pages that will be shown on the pagination list.</td>
+                                </tr>
+                                <tr>
+                                    <td>filters</td>
+                                    <td colspan="2">See the filter part below for more information.</td>
+                                </tr>
+                                <tr>
+                                    <td>filterText</td>
+                                    <td><code>'Search... '</code></td>
+                                    <td>The placeholder for the input filter (text and regexp).</td>
+                                </tr>
+                                <tr>
+                                    <td>filterEmptySelect</td>
+                                    <td><code>''</code></td>
+                                    <td>The default empty text for select filter.</td>
+                                </tr>
+                                <tr>
+                                    <td>filterSelectOptions</td>
+                                    <td><code>false</code></td>
+                                    <td>If enable, select options will be filtered according to other filters.</td>
+                                </tr>
+                                <tr>
+                                    <td>filterInputClass</td>
+                                    <td><code>''</code></td>
+                                    <td>The HTML class for search input.</td>
+                                </tr>
+                                <tr>
+                                    <td>filterSelectClass</td>
+                                    <td><code>''</code></td>
+                                    <td>The HTML class for search select.</td>
+                                </tr>
+                                <tr>
+                                    <td>onChange</td>
+                                    <td><code>function (old, new) {}</code></td>
+                                    <td>A callback call before page is changed.</td>
+                                </tr>
+                                <tr>
+                                    <td>beforeRefresh</td>
+                                    <td><code>function () {}</code></td>
+                                    <td>A callback call before each refresh.</td>
+                                </tr>
+                                <tr>
+                                    <td>afterRefresh</td>
+                                    <td><code>function () {}</code></td>
+                                    <td>A callback call after each refresh.</td>
+                                </tr>
+                                <tr>
+                                    <td>lineFormat</td>
+                                    <td colspan="3">See below.</td>
+                                </tr>
+                                <tr>
+                                    <td>firstPage</td>
+                                    <td><code>&amp;lt;&amp;lt;</code></td>
+                                    <td>First page link text (set to false to do not show the link).</td>
+                                </tr>
+                                <tr>
+                                    <td>prevPage</td>
+                                    <td><code>&amp;lt;</code></td>
+                                    <td>Previous page link text (set to false to do not show the link).</td>
+                                </tr>
+                                <tr>
+                                    <td>nextPage</td>
+                                    <td><code>&amp;gt;</code></td>
+                                    <td>Next page link text (set to false to do not show the link).</td>
+                                </tr>
+                                <tr>
+                                    <td>lastPage</td>
+                                    <td><code>&amp;gt;&amp;gt;</code></td>
+                                    <td>Last page link text (set to false to do not show the link).</td>
+                                </tr>
+                            </tbody>
+                        </table>   
+
+                    </section>
+
+
+    <!-- MAIN CONTENT -->
+      <section id="main_content" class="inner">
+
+<h2><a name="available-options" class="anchor" href="#available-options"><span class="octicon octicon-link"></span></a>Available options</h2>
+<p>You may want to customize the some parameters of your datatable. The following table summarize the options that can be passed to the constructor (second argument):</p>
+<h3>data</h3>
+<p>If you don't specify the data option, the plugin will load the data from the current HTML table,
+considering each row as an element (See the example above).</p>
+<p>If you specify a javascript array (of array or of element), it will be used as the data:</p>
+<pre><code class="prettyprint lang-javascript">$('#MyTable').datatable({
+    data: [
+       ['Albert', 'Einstein', 'Computer Science'],
+       ['Isaac', 'Newton', 'Physics']
+    ]
+}) ;</code></pre>
+<pre><code class="prettyprint lang-javascript">$('#MyTable').datatable({
+    data: [
+       {firstname: 'Albert', lastname: 'Einstein', field: 'Computer Science'},
+       {firstname: 'Isaac', lastname: 'Newton', field: 'Physics'}
+    ]
+}) ;</code></pre>
+<p>Depending on the type of element (array or object), you have to be carefull when you use the filter and the sort
+option which use the key.</p>
+<h3>Ajax data</h3>
+<p>If you don't want to put the data on the HTML page (because of the amount of data, for example), you can specify
+a ajax URL that will be used by the plugin to load asynchronously the data.</p>
+<p>To do that, you first have to create a web service that will take 2 arguments (get or post, see below), which
+are:</p>
+<ul>
+<li>offset: The first line to retrieve</li>
+<li>limit: The number of lines to retrieve</lI>
+</ul>
+<p>The service should return a json array containing the data.</p>
+<p>For example, if the plugin send a request with offset=10 & limit=2 to your server, it should return something like that:</p>
+<pre><code class="prettyprint lang-javascript">[{firstname: 'Albert', lastname: 'Einstein', field: 'Computer Science'}, {firstname: 'Isaac', lastname: 'Newton', field: 'Physics'}]</code></pre>
+<p>To use the service, you have to pass specific data option to the plugin:</p>
+<pre><code class="prettyprint lang-javascript">$('#MyTable').datatable({
+    data: {
+        url: "http://my-web-site/datas/get", // The service URL
+        type: "post", // The type of request (post or get)
+ /* The total amount of data, this parameter can be given as a data-size attribute on the table. If not specified, the data will be load asynchronously block by block until the server return an empty array (slower mode). */
+        size: 157,
+ /* The number of milliseconds between each refresh of ajax data (using asynchronous mode). If you do not want to enable this feature, just set this option to false. */
+        refresh: 5000
+    }
+}) ;</code></pre>
+
+<h3>counterText</h3>
+<p>You can customize the counter text, see the default function below for example:</p>
+<pre><code class="prettyprint lang-javascript linenums">function (currentPage, totalPage, firstRow, lastRow, totalRow) {
+    return 'Page ' + currentPage + ' on ' + totalPage + '. '
+        + Starting at ' + firstRow + ', ending at ' 
+        + lastRow + ' over ' + totalRow + ' entries.' ;
+}</code></pre>
+
+<h3>sort</h3>
+<p>The plugin allow you to sort data in different way, specifying which column can be sort, or which key to use.</p>
+<p><strong>Sorting data using specific function</strong></p>
+<p>If you specify a function as the sorting option, it will be used to sort data, but you won't be able
+to change the sorting direction (asc or desc). The function should take 2 arguments and return -1, 0, or 1 if the first
+argument is resp. lower, equal or greater than the second.</p>
+<p>Currently, it is only possible to specify one function for the whole table (not a function for each column).</p>
+<p><strong>Specifying which column can be sort</strong></p>
+<p>You have 4 ways to specify the columns, depending on the sort option:</p>
+
+<ul>
+    <li style="display:block;padding:17px 0 17px 0"><code class="prettyprint lang-javascript">false</code> - No sortable columns</li>
+    <li style="display:block;padding:17px 0 17px 0"><code class="prettyprint lang-javascript">true</code> - The sortable columns will be find according to <code>data-sort</code> attribute of &lt;th&gt; tags.</li>
+    <li style="display:block;padding:17px 0 17px 0"><code class="prettyprint lang-javascript">'*'</code> - All the column will be sortable.</li>
+    <li style="display:block;padding:17px 0 17px 0"><code class="prettyprint lang-javascript">[true, false, function (l, r) { }, true]</code> - Specific sort for each column 
+        <ul>
+            <li style="display:block;padding:25px 0 15px 0"><code class="prettyprint lang-javascript">function (l, r) { }</code><span style="display:inline-block;vertical-align:middle">
+                (return values must be -1, 0 or 1 if l is lower, equal or greater than r), the column
+                is sortable, and the order is computed using the specified function (for this column).</span></li>
+            <li style="display:block;padding:12px 0 12px 0"><code class="prettyprint lang-javascript">false</code> - the column is not sortable.</li>
+            <li style="display:block;padding:12px 0 12px 0"><code class="prettyprint lang-javascript">true</code><span style="display:inline-block;padding:12px 0 12px 0">
+                 - shortcut for the following function:</span>
+                <code class="prettyprint lang-javascript">function (l, r) { return l < r ? -1 : (l > r ? 1 : 0) ; }</code>,
+            which is a standard sort function.</li>
+        </ul>
+    </li>
+</ul>
+<p>When the plugin sort the data, it will used a key to find which field in each element it should compare. You can specify
+the sorting key of each column in the <code>data-sort</code> attribute of &lt;th&gt; tag. If you don't specify key but
+you enable sort, the key will be number (first column will be sort according to first value in each element, second column
+according to second value, etc.).</p>
+<p>You can specify a default sort by specifying <code>sortKey</code> and <code>sortDir</code> options.</p>
+
+<h3>filters</h3>
+<p>You can add filters on some columns if you want. The filter are text input or select (multiple or not).</p>
+<p>To add filters, you should specify the filters option which is an array. Each element of the array correspond to a
+column can take different values:</p>
+<table>
+    <tr><td><code>false</code></td><td>No filter for the specified column.</td></tr>
+    <tr><td><code>true</code></td><td>Text input filter (see &laquo;Firstname&raquo; column on the example above).</td></tr>
+    <tr><td><code>function (data, text) { }</code></td><td>Custom <code>&lt;input&gt;</code> filter, the first parameter is the value to test and the second one is the current input value (upper case).</td></tr>
+    <tr><td><code>'regexp'</code></td><td>Regexp input filter.</td></tr>
+    <tr><td><code>'select'</code></td><td>Select input: The options are find according to the current data set. This value should never be used with ajax loading.</td></tr>
+    <tr><td><code>{0: "Option 0", 1: "Option 1"}</code></td><td>Select filter options.</td></tr>
+</table>
+<p>In the select form, the comparison is done according to option value, not option text.</p>
+<p>Another form exist to create select filter, which is specified as a plain javascript object: </p>
+<pre><code class="prettyprint lang-javascript">{
+    /* The jQuery element to use (if you want to use a custom select element), if not specified, a new select
+    will be created. */
+    element: $('#my-select') | null,
+    /* The list of options. Notice that {0: "Option 0"} will output &lt;option value=0&gt;Option 0&lt;/option&gt;, so the value used to filter is 0, not "Option 0". 
+    HINT: If you don't want to specify the values manually, you can set this values: "auto" which will retrieve values from the table. */
+    values: {0: "Option 0", 1: "Option 1"} | "auto", 
+    /* The select default selected options, can be either a value or an array (for multiple select). If not specified, no value will be selected (for simple select), or all the values (for multiple select). */
+    default: 0,
+    /* Specify if an empty entry should be added. Default value is true. This parameter as no effect on multiple select. */
+    empty: true | "Pick to filter... ",
+    /* True for multiple select, false for simple. Default value is false. */
+    multiple: false,
+    /* Will not create a column for this filter. Useful if you want to filter data on a field which is not displayed in the table. */
+    noColumn: false,
+    /* A custom filter function to specify if you don't want the value to be filtered according to the options key. */
+    fn: function (data, selected) {
+        /* Note that selected is always an array of string. */
+        if (selected.length === 1) { // Only one option selected
+            if (selected[0] === "1") { // Values are always strings
+                return data < 10 ;
+            }
+            else {
+                return data >= 10 ;
+            }
+        }
+        /* Note that when using multiple select, selected will contain selected keys.
+        When the empty value is picked, the selected array will contain all available keys. */
+        return true ;
+    }
+}</code></pre>
+<p><strong>Warning: </strong>The difference between the two <code>'select'</code> filters is done according to the <code>'values'</code> key. If one of your options uses <code>'values'</code> as
+a key, you have to use the latest form.</p>
+<p>You can customize the default text in the input filter (i.e. the placeholder) by specifying <code>filterText</code> option (See the example). If you specify a string for the 
+<code>'empty'</code> option, it will be displayed when no options are selected (ex: 'Pick to filter... ').</p>
+<p>It is possible to directly specify a jQuery element (like <code>$('#my-input')</code>) as an element of the <code>filters</code> option, this element will not be moved
+inside the table (use it if you want your filter to add a filter outside the table).</p>
+
+<p><strong>Note: </strong>It is possible to create a filter which is not linked to a specific field, such filter is called a "lambda" filter. To create a lambda filter, you need to use
+a javascript object for the <code>filter</code> option and specify a fieldname starting with a <code>_</code>.</p>
+<pre><code class="prettyprint lang-javascript">$('#myTable').datatable({
+    filters: {
+        firstname: true, // A normal text filter
+        _1: function (data, text) { // A lambda filter, which will be placed in the second column
+            // Here data is an array or object depending on your data
+            return (data.firstname + data.lastname).indexOf(text) > -1 ; // Search in both first and last names
+        },
+        _2: { // Another lambda filter, this time this is a select
+            values: ['Option 1', 'Option 2'],
+            fn: function (data, selected) { // You need to specify the 'fn' attribute in this case
+                // Here data is an array or object depending on your data
+                if (selected.length === 1) {
+                    return data.field == selected[0] ;
+                }
+                return true ;
+            }
+        }
+    }
+});
+</code></pre>
+
+<h3>lineFormat</h3>
+<p>You can customize the way line are displayed, the function should return a jQuery line (see default function below for example):</p>
+<pre><code class="prettyprint lang-javascript linenums">function (id, data) { 
+    var res = $('&lt;tr&gt;&lt;/tr&gt;') ;
+    for (var key in data) { 
+        res.append('&lt;td&gt;' + data[key] + '&lt;/td&gt;') ; 
+    }
+    return res ;
+}</code></pre>
+
+<p><em><strong>Hint:</strong></em> You can use this function to store <code>data</code> into your row or to display hidden columns:</p>
+<pre><code class="prettyprint lang-javascript linenums">function (id, data) { 
+    var res = $('&lt;tr&gt;&lt;/tr&gt;') ;
+    res.data('data', data) ; // Store the data
+    res.attr('data-id', id) ; // Store the id
+    for (var key in data) {
+        var td = $('&lt;td&gt;' + data[key] + '&lt;/td&gt;') ;
+        if (key === 'field') {
+            td.hide() ; // Don't display the field column
+        }
+        res.append(td) ; 
+    }
+    return res ;
+}</code></pre>
+
+<h2><a name="comand" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Datatable methods</h2>
+<p>Here is a list of the method available from a DataTable object:</p>
+<p>Available commands are: </p>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Method name</th>
+            <th style="width: 25%;">Parameters</th>
+            <th>Info</th>
+        </tr>
+    </thead>
+    <body>
+        <tr>
+            <td><code>refresh</code></td>
+            <td></td>
+            <td>Refresh the datatable output.</td>
+        </tr>
+        <tr>
+            <td><code>destroy</code></td>
+            <td></td>
+            <td>Remove the datatable.</td>
+        </tr>
+        <tr>
+            <td><code>option</code></td>
+            <td>Name, Value</td>
+            <td>Set a option value (the data options can not be set this way).</td>
+        </tr>
+        <tr>
+            <td><code>page</code></td>
+            <td>Page number</td>
+            <td>If a argument is specified, load the specified page, otherwize return current page number.</td>
+        </tr>
+        <tr>
+            <td><code>reset-filters</code></td>
+            <td></td>
+            <td>Reset all filters.</td>
+        </tr>
+        <tr>
+            <td><code>select</code></td>
+            <td><code>null</code> <i class="arg-sep">/</i> ID <i class="arg-sep">/</i> <code>function</code></td>
+            <td>Retrieve : 
+                <ul>
+                    <li>All the elements if no argument is specified</li>
+                    <li>A filtered set of elements if a function is specified</li>
+                    <li>The first the first element found with the specified ID otherwise</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td><code>insert</code></td>
+            <td>Element <i class="arg-sep">/</i> <code>[E1, E2, ...]</code></td>
+            <td>Add the specified element(s) to the data array.</td>
+        </tr>
+        <tr>
+            <td><code>update</code></td>
+            <td>ID, Element</td>
+            <td>Update the first element found with the specified ID with the new specified data.</td>
+        </tr>
+        <tr>
+            <td><code>delete</code></td>
+            <td>ID <i class="arg-sep">/</i> <code>function</code></td>
+            <td>Remove:
+                <ul>
+                    <li>All the element matching the specified function if a function is specified</li>
+                    <li>The first element found with the specified ID otherwise</li>
+                </ul>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<p>Some options required an ID, how element are compared is specified by <code>identify</code> option. If <code>identify</code> is
+a string, then element are compared using this key. If <code>identify</code> is a function, 2 elements are equals if <code>identify</code> returns true. Examples: </p>
+<pre><code class="prettyprint lang-javascript linenums">/* EXAMPLE 1 */
+
+/* Two elements E1 and E2 are equals if E1.id === E2.id. */
+var datatable = new DataTable(document.getElementById('MyTable'), {
+    identify: 'id'
+});
+
+/* Delete the first element E found such as E.id === 4. */
+datatable.deleteRow(4) ;
+
+/* EXAMPLE 2 */
+
+var datatable = new DataTable(document.getElementById('MyTable'), {
+    identify: function (id, E) { 
+        return id.toUpperCase() === E.fullname.toUpperCase() ; 
+    }
+}) ;
+/* Update ISAAC NEWTON. The update function will update any field found in the second parameter. */
+datatable.updateRow('ISAAC NEWTON', {field: "Mathematics"}) ;
+
+/* EXAMPLE 3 */
+
+function myFilter (data) {
+    return data.field == "Mathematics" ;
+}
+
+var datatable = new DataTable(document.getElementById('MyTable'));
+
+/* Retrieve all mathematicians. */
+var savedData = datatable.all(myFilter);
+/* Delete all mathematicians. */
+datatable.deleteAll(myFilter);
+/* Insert all the mathematicians. */
+datatable.addRows(savedData);
+</code></pre>
+      </section>
+
+            </div>
+                <div class="col-md-3">
+                    <nav class="right-nav">
+                        <ul class="nav">
+                            <li>
+                                <a href="#getting-started">Getting Started</a>
+
+                            </li>
+                            <li>
+                                <a href="#options">Available Options</a>
+                                <ul class="nav">
+                                    <li><a href="#option-data">data</a></li>
+                                    <li><a href="#option-countertext">counterText</a></li>
+                                    <li><a href="#option-sort">sort</a></li>
+                                    <li><a href="#option-filters">filters</a></li>
+                                    <li><a href="#option-others">Other options</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#methods">Available Methods</a>
+                                <ul class="nav">
+                                    <li><a href="#form-standard-use">Standard Use</a></li>
+                                    <li><a href="#horizontal-forms">Horizontal Forms</a></li>
+                                    <li><a href="#custom-file-input">Custom File Input</a></li>
+                                    <li><a href="#button-groups-etc">Button Group, Toolbar & Dropdown</a></li>
+                                    <li><a href="#form-new-options">New input options</a></li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#jquery-version">jQuery Usage</a>
+                                <ul class="nav">
+                                    <li><a href="#modal-standard-use">Standard Use</a></li>
+                                    <li><a href="#modal-without-html">Without HTML</a></li>
+                                    <li><a href="#modal-custom">Custom Modal</a></li>
+                                    <li><a href="#modal-togglebutton">Creating a toggle button</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <a href="#top">Back to top</a>
+                    </nav>
+                </div>
+        </div>
+
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>&copy; 2015, Mikaël Capelle (@Holt59) - Designed and built by <a href="https://github.com/Holt59" target="_blank">Holt59</a> &amp; <a href="https://github.com/Holt59/datatable/graphs/contributors" target="_blank">contributors</a>.</p>
+                        <p>Code licensed under <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, Version 2.0</a>.</p>
+                        <p>Code & Documentation hosted by <a href="https://github.com" target="_blank"><i class="fa fa-github"></i> Github</a>.</p>
+                    </div>
+                </div>     
+            </div>
+        </footer>
+  
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/prism.min.js"></script>
+        <script type="text/javascript" src="js/datatable.min.js"></script>
+
+        <script type="text/javascript">
+
+            function create_datatable(section_id) {
+                $('#' + section_id + '-markup pre code').text($('#' + section_id + '-output').html());
+                var js = $('#' + section_id + '-javascript pre code').text();
+                js = js.replace('#my-table', '#' + section_id + '-output table');
+                eval(js);
+            }
+
+            /* First example */
+
+            $('#first-datatable-markup pre code').text($('#first-datatable-without').html());
+            $('#first-datatable-output').html($('#first-datatable-without').html());
+            var firstExampleTable = document.querySelector('#first-datatable-output table');
+            var datatable = new DataTable(firstExampleTable, {
+                pageSize: 5,
+                pagingDivSelector: '#paging-first-datatable',
+                sort: [true, true, false],
+                filters: [true, false, 'select'],
+                filterText: 'Type to filter... '
+            });
+
+            /* Option DATA 1 */
+
+            create_datatable('opts-data-array-1');
+            create_datatable('opts-data-array-2');
+
+        </script>
+
+        <script type="text/javascript">
+            var sideNavOffset = $('.right-nav').offset().top;
+            $('a[href^="#"]:not([role="tab"])').on('click', function (e) {
+                var section = $($(this).attr('href'));
+                if (section.length > 0) {
+                    e.preventDefault();
+                    if (!section.is('h3')) {
+                        $('.right-nav').addClass('scrolling');
+                    }
+                    $('html, body').animate({
+                        scrollTop: section.offset().top - 20
+                    }, {
+                        complete: function () {
+                            $('.right-nav').removeClass('scrolling');
+                        }
+                    }, 500);
+                }
+            });
+            $(window).on('scroll', function (e) {
+                if ($(window).scrollTop() + 20 > sideNavOffset) {
+                    $('.right-nav').addClass('right-nav-fixed');
+                }
+                else {
+                    $('.right-nav').removeClass('right-nav-fixed');
+                }
+            });
+        </script>
+
+  </body>
+</html>
